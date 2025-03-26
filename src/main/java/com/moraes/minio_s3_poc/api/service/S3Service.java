@@ -8,6 +8,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 import org.springframework.core.env.Environment;
 import org.springframework.core.io.ByteArrayResource;
@@ -59,7 +60,7 @@ public class S3Service implements IS3Service {
     public String uploadObject(MultipartFile file) {
         Path tempFile = null;
         try {
-            final String key = String.valueOf(new Date().getTime()).concat("_").concat(file.getOriginalFilename());
+            final String key = String.valueOf(new Date().getTime()).concat("_").concat(UUID.randomUUID().toString());
             Map<String, String> metadata = new HashMap<>();
             metadata.put("company", "Baeldung");
             metadata.put("environment", "development");
