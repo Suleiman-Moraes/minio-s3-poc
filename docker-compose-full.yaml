@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  minio:
+    image: minio/minio:latest
+    container_name: minio
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    networks:
+      - susu-net
+    volumes:
+      - 'minio_data:/data'
+    environment:
+      MINIO_ROOT_USER: admin
+      MINIO_ROOT_PASSWORD: '12345678'
+    command: server --console-address ":9001" /data
+
+  minio-s3-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: minio-s3-app
+    depends_on:
+      - minio
+    networks:
+      - susu-net
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_PROFILES_ACTIVE: default
+      MORAES_S3_BUCKETNAME: my-bucket
+      MORAES_S3_ACCESSKEY: admin
+      MORAES_S3_SECRETKEY: '12345678'
+      MORAES_S3_HOST: http://minio:9000
+
+networks:
+  susu-net:
+    driver: bridge
+
+volumes:
+  minio_data:
+    driver: local

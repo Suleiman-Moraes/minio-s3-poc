@@ -41,9 +41,9 @@ $ git clone https://github.com/suleiman-moraes/minio-s3-poc.git
 $ cd minio-s3-poc
 ```
 
-2️⃣ **Upload the MinIO environment with Docker Compose**
+2️⃣ **Run the project with Docker Compose**
 ```sh
-$ docker-compose up -d
+$ docker-compose -f docker-compose-full.yaml up -d
 ```
 
 3️⃣ **Compile and run the project**
