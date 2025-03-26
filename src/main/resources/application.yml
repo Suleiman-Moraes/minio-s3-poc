@@ -12,4 +12,4 @@ moraes:
     bucketName: my-bucket
     accessKey: admin
     secretKey: '12345678'
-    host: http://127.0.0.1:9000
+    host: http://localhost:9000
