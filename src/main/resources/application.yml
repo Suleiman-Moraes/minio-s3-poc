@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: minio-s3-poc
+  
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+
+moraes:
+  s3:
+    bucketName: my-bucket
+    accessKey: admin
+    secretKey: '12345678'
+    host: http://127.0.0.1:9000

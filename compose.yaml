@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  minio:
+    image: minio/minio:latest
+    container_name: minio
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    networks:
+      - susu-net
+    volumes:
+      - 'minio_data:/data'
+    environment:
+      MINIO_ROOT_USER: admin
+      MINIO_ROOT_PASSWORD: '12345678'
+    command: server --console-address ":9001" /data
+
+networks:
+  susu-net:
+    driver: bridge
+
+volumes:
+  minio_data:
+    driver: local

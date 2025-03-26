@@ -1,0 +1,24 @@
+{
+    "properties": [
+        {
+            "name": "moraes.s3.bucket-name",
+            "type": "java.lang.String",
+            "description": "A description for 'moraes.s3.bucket-name'"
+        },
+        {
+            "name": "moraes.s3.accessKey",
+            "type": "java.lang.String",
+            "description": "A description for 'moraes.s3.accessKey'"
+        },
+        {
+            "name": "moraes.s3.secretKey",
+            "type": "java.lang.String",
+            "description": "A description for 'moraes.s3.secretKey'"
+        },
+        {
+            "name": "moraes.s3.host",
+            "type": "java.lang.String",
+            "description": "A description for 'moraes.s3.host'"
+        }
+    ]
+}
