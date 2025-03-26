@@ -37,19 +37,19 @@ This project is a **Proof of Concept (PoC)** for integrating **MinIO** with **AW
 
 1️⃣ **Clone the repository**
 ```sh
-$ git clone https://github.com/suleiman-moraes/minio-s3-poc.git
-$ cd minio-s3-poc
+git clone https://github.com/suleiman-moraes/minio-s3-poc.git
+cd minio-s3-poc
 ```
 
 2️⃣ **Run the project with Docker Compose**
 ```sh
-$ docker-compose -f docker-compose-full.yaml up -d
+docker-compose -f docker-compose-full.yaml up -d
 ```
 
 3️⃣ **Compile and run the project**
 ```sh
-$ mvn clean install
-$ mvn spring-boot:run
+mvn clean install
+mvn spring-boot:run
 ```
 
 4️⃣ **Access Swagger to test endpoints**

@@ -128,6 +128,7 @@ public class S3Service implements IS3Service {
                 .endpointOverride(URI.create(host))
                 .region(Region.US_EAST_1)
                 .credentialsProvider(StaticCredentialsProvider.create(credentials))
+                .forcePathStyle(Boolean.TRUE)
                 .build();
 
         if (!bucketExists(bucketName)) {

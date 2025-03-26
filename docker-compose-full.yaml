@@ -26,7 +26,7 @@ services:
     networks:
       - susu-net
     ports:
-      - "8080:8080"
+      - '8080:8080'
     environment:
       SPRING_PROFILES_ACTIVE: default
       MORAES_S3_BUCKETNAME: my-bucket
